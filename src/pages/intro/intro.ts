@@ -24,9 +24,11 @@ export class IntroPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad IntroPage');
   }
-
+/**
+ * Função para a aplicação ir para um c
+ */
   goToTabsPage(){
     this.navCtrl.push(TabsPage);
   }
-
+  
 }

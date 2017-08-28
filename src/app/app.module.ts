@@ -3,45 +3,49 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+// import { AboutPage } from '../pages/about/about';
+// import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { PageTeste } from '../pages/teste/teste';
+// import { PageTeste } from '../pages/teste/teste';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { FeedPageModule } from "../pages/feed/feed.module";
-import { IntroPageModule } from "../pages/intro/intro.module";
+import { HttpModule } from "@angular/http";
+import { FeedPageModule } from '../pages/feed/feed.module';
+import { IntroPageModule } from '../pages/intro/intro.module';
+import { MoovieProvider } from '../providers/moovie/moovie';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    // AboutPage,
+    // ContactPage,
     HomePage,
-    PageTeste,
+    // PageTeste,
     TabsPage
   ],
   imports: [
     BrowserModule,   
     IonicModule.forRoot(MyApp),
     FeedPageModule,
-    IntroPageModule
+    IntroPageModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    // AboutPage,
+    // ContactPage,
     HomePage,
-    PageTeste,
+    // PageTeste,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MoovieProvider
   ]
 })
 export class AppModule {}
