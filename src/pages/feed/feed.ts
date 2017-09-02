@@ -18,6 +18,7 @@ import { MoovieProvider } from "../../providers/moovie/moovie";
   ]
 })
 export class FeedPage {
+  // Criando objeto JSON para com informações estaticas
   public objeto_feed = {
     titulo: "Gabriel Ribeiro Schmitt",
     data: "November 5, 1955",
@@ -26,9 +27,8 @@ export class FeedPage {
     qntd_comments: 4,
     time_comment: "11h ago"
   }
-
+  // criando um novo objeto do tipo array de qualquer tipo
   public lista_filmes = new Array<any>();
-
 
   public nome_usuario:string = "Gabriel Ribeiro Schmitt";
   constructor(
@@ -50,7 +50,7 @@ export class FeedPage {
         data => {
           // transformando a resposta em um objeto de qualquer tipo
           const response = (data as any);
-          // trar a objeto de resposta como um arquivo .JSON
+          // tratar o objeto de resposta como um arquivo .JSON
           const objeto_retorno = JSON.parse(response._body);
           this.lista_filmes = objeto_retorno.results;
           console.log(objeto_retorno);
